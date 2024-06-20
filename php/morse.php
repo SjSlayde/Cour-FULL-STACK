@@ -11,12 +11,15 @@
     <input type=textarea cols='50' row='2' name='trad' id='trad'>
 </form>
     <?php 
+    // Récupère la chaîne d'entrée à partir de la requête POST
     $string = $_POST['trad'];
-    
+
+    // Appelle la fonction stringToMorse pour convertir la chaîne en code Morse
     stringToMorse($string);
 
     function stringToMorse($string)
     {
+         // Définit un tableau qui mappe chaque caractère à son code Morse correspondant
         $morsetrad = array("A" => ".-",
         "B" => "-...",
         "C" => "-.-.",
@@ -53,17 +56,35 @@
         "7" => "--...",
         "8" => "---..",
         "9" => "----.",
-        " " => " " );
-        $i = 0;
+        " " => " " );// espace est mappé à un seul espace dans le code Morse
+
+        
+        // Supprime tous les caractères non alphanumériques de la chaîne d'entrée
         $string = preg_replace('/[^a-zA-Z0-9 ]/', '', $string);//ça vire les caractere pas connu.
-         while($i != strlen($string)){
+        
+         // Initialise une variable pour stocker la traduction en code Morse
+        $phrasetraduite = '';
+
+        $i = 0;
+        
+        while($i != strlen($string)){
+            // Récupère le caractère actuel et le convertit en majuscule
             $N = strtoupper(substr($string,$i,1));
-            $michel = $michel.$morsetrad[$N];
+            
+            // Recherche le code Morse du caractère actuel dans le tableau $morsetrad
+            $phrasetraduite = $phrasetraduite.$morsetrad[$N];
+            
+            // Affiche le caractère actuel et son code Morse correspondant
             echo substr($string,$i,1).'=>'.$morsetrad[$N].'<br>';
+            
+            // Incrémente le compteur
             $i++;
-            }
-            if($string!=null){
-    echo    '<br>'.$string.' : traduit en morse ça donne : '.$michel;
+            
+        }
+        
+        // Affiche la chaîne d'entrée et son code Morse correspondant
+        if($string!=null){
+    echo    '<br>'.$string.' : traduit en morse ça donne : '.$phrasetraduite;
             }}
     
     ?>
