@@ -6,12 +6,12 @@
     <title>trad en morse</title>
 </head>
 <body>
-    <form method='GET'>
+    <form method='POST'>
     <label for='trad'>Saisisser le mot/la phrase que vous souhaiter traduire en morse(ne prend pas en charge les caractére spéciaux) : </label>
     <input type=textarea cols='50' row='2' name='trad' id='trad'>
 </form>
     <?php 
-    $string = $_GET['trad'];
+    $string = $_POST['trad'];
     
     stringToMorse($string);
 
@@ -58,7 +58,7 @@
         $string = preg_replace('/[^a-zA-Z0-9 ]/', '', $string);//ça vire les caractere pas connu.
          while($i != strlen($string)){
             $N = strtoupper(substr($string,$i,1));
-            $michel =  $michel.$morsetrad[$N];
+            $michel = $michel.$morsetrad[$N];
             echo substr($string,$i,1).'=>'.$morsetrad[$N].'<br>';
             $i++;
             }
