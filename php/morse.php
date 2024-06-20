@@ -62,8 +62,9 @@
             echo substr($string,$i,1).'=>'.$morsetrad[$N].'<br>';
             $i++;
             }
+            if($string!=null){
     echo    '<br>'.$string.' : traduit en morse ça donne : '.$michel;
-            }
+            }}
     
     ?>
 </body>
