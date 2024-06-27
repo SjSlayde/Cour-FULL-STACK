@@ -72,8 +72,8 @@ if ($_FILES['ajoutimage']['name'] != null) {
 
 
     // Définition du chemin de destination sécurisé
-
-    $destination = '../../pictures/' . uniqid() . '_' . $name;
+    $cheminimage = uniqid() . '_' . $name;
+    $destination = '../../pictures/' . $cheminimage;
 
 
     // Déplacement du fichier uploadé
@@ -112,7 +112,7 @@ $stmt->bindValue(':id', $_POST['modif']);
 $stmt->bindValue(':title', $_POST['ajouttitle']);
 $stmt->bindValue(':year', $_POST['ajoutyear']);
 $stmt->bindValue(':prix', $_POST['ajoutprix']);
-$stmt->bindParam(':picture', $destination);
+$stmt->bindParam(':picture', $cheminimage);
 $stmt->bindValue(':label', $_POST['ajoutlabel']); 
 $stmt->bindValue(':genre', $_POST['ajoutgenre']); 
 $stmt->bindParam(':artist_id', $artist_id);
