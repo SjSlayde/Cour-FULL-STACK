@@ -8,15 +8,17 @@
             <div class='h-3 col-6'>Tout les albums</div><button type='button' class='btn btn-primary col-5' style="max-width: 240px;" onclick='window.location="ajoutdisc.php"'>ajout<button>
         </div>
 
-        <form method='GET' action='test.php' class='row justify-content-center'>
+        <form method='GET' action='detaildisc.php' class='row justify-content-center'>
   
             <?php
+            //recupere tout les disc dans la base de donnée
                 $stmt = $conn->prepare("SELECT * FROM disc d LEFT JOIN artist a ON d.artist_id = a.artist_id");
                
                 $stmt->execute();
 
                 $result = $stmt->fetchAll();
 
+                //affiche les disc dans une card boostrap
                 foreach($result as $row){
                 echo '<div class="card mb-3 mx-3 col-5" id="'.$row['disc_id'].'"style="max-width: 540px;">
             <div class="row g-0">

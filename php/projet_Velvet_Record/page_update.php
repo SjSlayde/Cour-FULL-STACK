@@ -16,12 +16,12 @@ require_once('header.php')
      
         <form action='script_update.php' method='POST' enctype="multipart/form-data" class='row justify-content-center'>
     
-            <label class='mt-2' for='title'>Titre :</label><br><input type='text' class='mt-2' id='title' name='ajouttitle' value='<?php echo $result['disc_title']; ?>'><br>
-            <label class='mt-2' for='artiste'>Artiste :</label><br><input type='text' class='mt-2' id='artiste' name='ajoutartist' value='<?php echo $result['artist_name']; ?>'><br>
-            <label class='mt-2' for='year'>Année :</label><br><input type='text' class='mt-2' id='year' name='ajoutyear' value='<?php echo $result['disc_year']; ?>'><br>
-            <label class='mt-2' for='genre'>Genre :</label><br><input type='text' class='mt-2' id='genre' name='ajoutgenre' value='<?php echo $result['disc_genre']; ?>'><br>
-            <label class='mt-2' for='label'>label :</label><br><input type='text' class='mt-2' id='label' name='ajoutlabel' value='<?php echo $result['disc_label']; ?>'><br>
-            <label class='mt-2' for='price'>Prix :</label><br><input type='text' class='mt-2' id='price' name='ajoutprix' value='<?php echo $result['disc_price']; ?>'><br>
+            <label class='mt-2' for='title'>Titre :</label><br><input type='text' class='mt-2' id='title' name='ajouttitle' value='<?php echo $result['disc_title']; ?>' required><br>
+            <label class='mt-2' for='artiste'>Artiste :</label><br><input type='text' class='mt-2' id='artiste' name='ajoutartist' value='<?php echo $result['artist_name']; ?>' required><br>
+            <label class='mt-2' for='year'>Année :</label><br><input type='text' class='mt-2' id='year' name='ajoutyear' value='<?php echo $result['disc_year']; ?>' required><br>
+            <label class='mt-2' for='genre'>Genre :</label><br><input type='text' class='mt-2' id='genre' name='ajoutgenre' value='<?php echo $result['disc_genre']; ?>' required><br>
+            <label class='mt-2' for='label'>label :</label><br><input type='text' class='mt-2' id='label' name='ajoutlabel' value='<?php echo $result['disc_label']; ?>' required><br>
+            <label class='mt-2' for='price'>Prix :</label><br><input type='text' class='mt-2' id='price' name='ajoutprix' value='<?php echo $result['disc_price']; ?>' required><br>
 
             <label class='mt-2' for='jaquette'>Jaquette d'album :</label><br><input type='file' class='mt-2' id='jaquette' name='ajoutimage'><br>
             <img src='../../pictures/<?php echo $result['disc_picture']; ?>' alt='<?php echo $result['disc_title']; ?>' style="max-width: 540px" class='mt-2 img-fluid'><br>
