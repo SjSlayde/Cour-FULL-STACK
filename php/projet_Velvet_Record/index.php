@@ -2,13 +2,12 @@
 <?php 
     require_once('header.php');
 ?>
-<body>
-    <div class='container'>
+    <div class='container mt-3'>
         <div class='row justify-content-center'>
-            <div class='h-3 col-6'>Tout les albums</div><button type='button' class='btn btn-primary col-5' style="max-width: 240px;" onclick='window.location="ajoutdisc.php"'>ajout<button>
+            <div class='h3 text-white col-6'>Tout les albums</div><button type='button' class='btn btn-primary col-5' style="width: 240px;" onclick='window.location="ajoutdisc.php"'>ajout</button>
         </div>
 
-        <form method='GET' action='detaildisc.php' class='row justify-content-center'>
+        <form method='GET' action='detaildisc.php' class='mt-3 row justify-content-center'>
   
             <?php
             //recupere tout les disc dans la base de donnée
@@ -20,7 +19,7 @@
 
                 //affiche les disc dans une card boostrap
                 foreach($result as $row){
-                echo '<div class="card mb-3 mx-3 col-5" id="'.$row['disc_id'].'"style="max-width: 540px;">
+                echo '<div class="card mb-3 mx-3 col-5 bg-dark-subtle" id="'.$row['disc_id'].'"style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src="../../pictures/'.$row['disc_picture'].'" class="img-fluid rounded-start" alt="'.$row['disc_title'].'">
@@ -37,7 +36,7 @@
                 </div>
             </div>
             </div>';
-                }
+                };
             ?>
     </form>
 </div>

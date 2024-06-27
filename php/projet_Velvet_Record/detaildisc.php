@@ -10,18 +10,19 @@ require_once('header.php');
                 $stock = $_GET['nodiscs'];
 
                 ?>
-            <div class='container'>
+            <div class='container mt-3'>
                 <div class='row justify-content-center'>
                     <img src="../../pictures/<?php echo $result['disc_picture'];?>" class="img-fluid rounded-start col-6">
                     <div class="col-6">
-                        <h2><?php echo $result['disc_title'];?></h2>
-                        <p>Artist : <?php echo $result['artist_name'];?></p>
-                        <p>Label : <?php echo $result['disc_title'];?></p>
-                        <p>Year : <?php echo $result['disc_year'];?></p>
-                        <p>Genre : <?php echo $result['disc_genre'];?></p>
+                        <h2 class='text-white'><?php echo $result['disc_title'];?></h2>
+                        <p class='text-white'>Artist : <?php echo $result['artist_name'];?></p>
+                        <p class='text-white'>Label : <?php echo $result['disc_label'];?></p>
+                        <p class='text-white'>Year : <?php echo $result['disc_year'];?></p>
+                        <p class='text-white'>Genre : <?php echo $result['disc_genre'];?></p>
+                        <p class='text-white'>Prix : <?php echo $result['disc_price'];?></p>
                     </div>
-                <form action="page_update.php" method='POST' class='col-6 mt-5'>
-                    <button type='SUBMIT' CLASS='btn btn-danger'>SUPPRIMER</button>
+                <form action="page_delete.php" method='GET' class='col-6 mt-5'>
+                    <button type='SUBMIT' name='delete' CLASS='btn btn-danger' value='<?php echo $result['disc_id']; ?>'>SUPPRIMER</button>
                 </form>
                 <form action="page_update.php" method='GET' class='col-6 mt-5'>
                     <button type='SUBMIT' name='modif' CLASS='btn btn-warning' value='<?php echo $result['disc_id']; ?>'>modifier</button>

@@ -127,5 +127,5 @@ try {
     echo 'Erreur lors de l\'exécution de la requête : ' . $e->getMessage();
 
 }
-    header('Location:index.php')
+    header('Location:index.php');
 ?>
