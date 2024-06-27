@@ -23,7 +23,9 @@ if (isset($_FILES['ajoutimage'])) {
 
 
     // Définition du chemin de destination sécurisé
+   
     $cheminimage = uniqid() . '_' . $name;
+   
     $destination = '../../pictures/' . $cheminimage;
 
 
