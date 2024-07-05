@@ -15,16 +15,18 @@ require_once('Enfant.class.php');
 //         echo $key . " : " . $value . "<br>";
 //     };
 
+// Création des instances de Magasins
 $magasin = new Magasins('Magasin de Paris', '123 rue de Rivoli', '75001', 'Paris', 'Yes');
 $magasin2 = new Magasins("Magasin d'amiens", "45 rue pinsard" , "80000" , "Amiens", 'No');
 
+// Création des instances d'Enfant
 $enfant1 = new Primaire("OUI","8");
 $enfant2 = new Primaire("OUI","11");
 $enfant3 = new Primaire("OUI","14");
 $enfant4 = new Primaire("OUI","18");
 $enfant5 = new Primaire("NON","0");
 
-
+// Création des instances d'Employe et initialisation
 $emp1 = new Employe();
         $emp1->setNommage("Tuche");
         $emp1->setPrenomage("Jo");
@@ -87,26 +89,28 @@ $emp5 = new Employe();
         $emp5->setPrime();
 
 
+        // Affichage des informations des employés
         createemp($emp1);
         createemp($emp2);
         createemp($emp3);
         createemp($emp4);
         createemp($emp5);
 
-
+        // Fonction pour afficher les informations des employés
         function createemp($emp){
-            // foreach($emp as $key => $value){
-            //     echo $key . " : " . $value . "<br>";
-            // };
-            echo $emp->getNom() . ' ' . $emp->getPrenom() . ' travaille au ' . $emp->getMagasin()->getNom() . ' à ' . $emp->getMagasin()->getVille() .' restauration '. $emp->getMagasin()->getRestauration()
-            . ' depuis le ' . $emp->getAnneedeservice(). ' ticket noel : ' . $emp->getEnfant()->getTicket();
-            echo '<br>';
+            echo '<br>nom  :' .$emp->getNom() .
+            '<br>Prenom :' . $emp->getPrenom() .
+            '<br>Date d\'embauche :' . $emp->getDateembauche() .
+            '<br>Poste :' . $emp->getPoste() .
+            '<br>Salaire :' . $emp->getSalaire() .
+            '<br>Secteur :' . $emp->getSecteur() .
+            '<br>Dureembauche :' . $emp->getDureembauche() .
+            '<br>Prime :' . $emp->getPrime() .
+            '<br>travaille au ' . $emp->getMagasin()->getNom() . 
+            '<br>à ' . $emp->getMagasin()->getVille() .
+            '<br>au ' . $emp->getMagasin()->getAdresse().' CP ' . $emp->getMagasin()->getCodePostal().
+            '<br>restauration '. $emp->getMagasin()->getRestauration() .
+            '<br>depuis le ' . $emp->getAnneedeservice() .
+            '<br>ticket noel : ' . $emp->getEnfant()->getTicket().'<br>';
         }
-
-
-//check code black box ai le j'ai la flemme
-// $magasin = new Magasin('Magasin de Paris', '123 rue de Rivoli', '75001', 'Paris');
-// $employe = new Employe('Jean', 'Pierre', $magasin);
-// echo $emp2->getNom() . ' ' . $emp2->getPrenom() . ' travaille au ' . $emp2->getMagasin()->getNom() . ' à ' . $emp2->getMagasin()->getVille();
-// outputs "Jean Pierre travaille au Magasin de Paris à Paris"
     ?>
