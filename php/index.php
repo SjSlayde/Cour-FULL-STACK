@@ -14,7 +14,10 @@
     $requete = $db->query("SELECT * FROM artist");
     $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
+
 ?>
+
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
